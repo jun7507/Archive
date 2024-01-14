@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
-import pymysql
-pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -33,8 +31,8 @@ ALLOWED_HOSTS = ['43.203.89.131']
 # Application definition
 
 INSTALLED_APPS = [
-    "common",
-    "adul",
+    "common.apps.CommonConfig",
+    "adul.apps.BaseConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -77,10 +75,17 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'python_db',  #mysql
+        'USER': 'root', #root
+        'PASSWORD': '1234', #사용자의 비밀번호
+        'HOST': 'localhost', #공백으로 냅두면 default localhost
+        'PORT': '3306' #공백으로 냅두면 default 3306
     }
 }
 
