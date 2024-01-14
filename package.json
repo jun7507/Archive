@@ -1,0 +1,36 @@
+{
+  "name": "aps-simple-viewer-nodejs",
+  "version": "1.0.0",
+  "description": "Autodesk Platform Services application built by following the Simple Viewer tutorial from https://aps.autodesk.com/tutorials.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.93.0",
+    "@react-three/fiber": "^8.15.14",
+    "@types/forge-viewer": "^7.69.9",
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-formidable": "^1.2.0",
+    "forge-apis": "^0.9.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-router-dom": "^6.21.2",
+    "tailwind": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.33",
+    "tailwindcss": "^3.4.1",
+    "vite": "^5.0.8"
+  }
+}

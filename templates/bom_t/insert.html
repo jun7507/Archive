@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>입력</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="title" class="form-label">책이름 : </label><input type="text" name="title" class="form-control" id="title" required>
+    <label for="author" class="form-label">저자 : </label><input type="text" name="author" class="form-control" id="author">
+    <label for="publisher" class="form-label">출판사 : </label><input type="text" name="publisher" class="form-control" id="publisher">
+    <label for="year_of_publication" class="form-label">출판일 : </label><input type="text" name="year_of_publication" class="form-control" id="year_of_publication">
+    <label for="price" class="form-label">가격 : </label><input type="text" name="price" class="form-control" id="price" pattern="[0-9]+">
+    <input type="submit" value="입력" class="btn btn-success mb-3">
+    <br>
+    <button class="btn btn-dark" onclick="location.href='/'">홈으로</button>
+
+        </form>
+    </div>
+{% endblock %}

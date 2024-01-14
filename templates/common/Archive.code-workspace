@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../99_etc"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Archive"
+	}
+}

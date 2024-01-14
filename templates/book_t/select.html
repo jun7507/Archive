@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Serach</h1>
+    <table class="table table-light table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">순번</th>
+                <th scope="col">책이름</th>
+                <th scope="col">저자</th>
+                <th scope="col">출판사</th>
+                <th scope="col">출판일</th>
+                <th scope="col">가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in booklist %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.publisher.name}}</td>
+                <td>{{book.year_of_publication}}</td>
+                <td>{{book.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="mb-3" style='text-align:center;'>
+        <form action="">
+            <label for="search" class="form-label">책이름 검색 : </label>
+            <input type="text" name="search" id="'serach">
+            <input type="submit" value="검색" class="btn btn-light mb-3">
+        </form>
+
+        <ul class='pagination'>
+            {% for i in page_range %}
+            <li>
+                <a href='?page={{i}}&search={{search}}'>
+                    {{ i }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <br>
+        <button class="btn btn-dark" onclick="location.href='/'">홈으로</button>
+
+    </div>
+
+</div>
+{% endblock %}

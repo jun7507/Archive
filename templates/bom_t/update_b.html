@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Update</h1>
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">bcode</th>
+                <th scope="col">AssMark</th>
+                <th scope="col">PartMark</th>
+                <th scope="col">Type</th>
+                <th scope="col">H</th>
+                <th scope="col">B</th>
+                <th scope="col">t1</th>
+                <th scope="col">t2</th>
+                <th scope="col">Length</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Area</th>
+                <th scope="col">Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bl in bom_list %}
+            <tr>
+                <td>{{bl.bcode}}</td>
+                <td>{{bl.assmark}}</td>
+                <td>{{bl.partmark}}</td>
+                <td>{{bl.type}}</td>
+                <td>{{bl.h}}</td>
+                <td>{{bl.b}}</td>
+                <td>{{bl.t1}}</td>
+                <td>{{bl.t2}}</td>
+                <td>{{bl.length}}</td>
+                <td>{{bl.qty}}</td>
+                <td>{{bl.unit}}</td>
+                <td>{{bl.grade}}</td>
+                <td>{{bl.area}}</td>
+                <td>{{bl.weight}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="mb-3" style='text-align:center;'>
+        <form action="">
+            <label for="search" class="form-label">검색 : </label>
+            <input type="text" name="search" id="'serach">
+            <input type="submit" value="검색" class="btn btn-light mb-3">
+        </form>
+
+        <ul class="pagination justify-content-center">
+            {% for i in page_range %}
+            <li class="page-item">
+                <a  class="page-link" href='?page={{i}}&search={{search}}'>
+                    {{ i }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="bcode" class="form-label">Select Assmark Code : </label>
+            <input type="text" name="bcode" id="'bcode" ><br>
+            <label for="assmark" class="form-label">AssMark : </label><input type="text" name="assmark"  id="assmark" required>
+
+            <label for="partmark" class="form-label">partmark : </label><input type="text" name="partmark"  id="partmark">
+
+            <label for="type" class="form-label">Type : </label><input type="text" name="type"  id="type">
+
+            <label for="h" class="form-label">H : </label><input type="text" name="h"  id="h">
+            
+            <label for="b" class="form-label">B : </label><input type="text" name="b"  id="b" >
+
+            <label for="t1" class="form-label">t1 : </label><input type="text" name="t1"  id="t1">
+            
+            <label for="t2" class="form-label">t2 : </label><input type="text" name="t2"  id="t2" >
+
+            <label for="length" class="form-label">Length : </label><input type="text" name="length"  id="length">
+            
+            <label for="qty" class="form-label">Qty : </label><input type="text" name="qty"  id="qty" >
+
+            <label for="unit" class="form-label">Unit : </label><input type="text" name="unit"  id="unit">
+            
+            <label for="grade" class="form-label">Grade : </label><input type="text" name="grade"  id="grade" >
+
+            <label for="area" class="form-label">Area : </label><input type="text" name="area"  id="area">
+            
+            <label for="weight" class="form-label">Weight : </label><input type="text" name="weight"  id="weight" >
+            
+
+            <input type="submit" value="Update" class="btn btn-warning mb-2">
+        </form>
+
+        
+        <br>
+        <button class="btn btn-dark" onclick="location.href='/'">홈으로</button>
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block update %}
+{% endblock%}

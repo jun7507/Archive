@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1>삭제</h1>
+    <table class="table table-light table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">책코드</th>
+                <th scope="col">책이름</th>
+                <th scope="col">저자</th>
+                <th scope="col">출판사</th>
+                <th scope="col">출판일</th>
+                <th scope="col">가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in booklist %}
+            <tr>
+                <td>{{book.bcode}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{{book.publisher.name}}</td>
+                <td>{{book.year_of_publication}}</td>
+                <td>{{book.price}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <div class="mb-3" style='text-align:center;'>
+        <ul class='pagination'>
+            {% for i in page_range %}
+            <li>
+                <a href='?page={{ i }}'>
+                    {{ i }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="bcode" class="form-label">삭제할 책 코드를 선택하세요 : </label>
+            <input type="text" name="bcode" id="'bcode" >
+            <input type="submit" value="삭제" class="btn btn-danger mb-3">
+        </form>
+
+        
+        <br>
+        <button class="btn btn-dark" onclick="location.href='/'">홈으로</button>
+
+    </div>
+
+</div>
+{% endblock %}
+
+{% block update %}
+{% endblock%}

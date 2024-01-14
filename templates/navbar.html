@@ -1,0 +1,54 @@
+
+<div class="container-fluid">
+    <div class="logo-details">
+        <i class='bx bxl-c-plus-plus'></i>
+        <a class="logo_name" href="{% url 'base' %}">CodingLab</a>
+    </div>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'common:logout' %}">{{ user.username }} (로그아웃)</a>
+                {% else %}
+                <i class='bx bx-pie-chart-alt-2'></i>
+                <!-- <a class="link_name" href="{% url 'common:login' %}">로그인</a> -->
+                {% endif %}
+            </li>
+
+            <!-- <li>
+                {% if not user.is_authenticated %}
+                <a class="nav-link" href="{% url 'common:signup' %}">회원가입</a>
+                {% endif %}
+            </li> -->
+            <li>
+              {% if not user.is_authenticated %}
+              <a href="{% url 'common:signup' %}">
+                <i class='bx bx-pie-chart-alt-2'></i>
+                <span class="link_name">회원가입</span>
+              </a>
+              <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">회원가입</a></li>
+            </ul>
+            {% endif %}
+            </li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<!-- 
+<li>
+    <a href="#">
+      <i class='bx bx-pie-chart-alt-2'></i>
+      <span class="link_name">Analytics</span>
+    </a>
+    <ul class="sub-menu blank">
+      <li><a class="link_name" href="#">Analytics</a></li>
+    </ul>
+  </li> -->
