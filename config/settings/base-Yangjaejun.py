@@ -25,14 +25,14 @@ SECRET_KEY = "django-insecure-!)*$!urvee%7ol4iopz3*4+g2c7vll@_b_xi7zan39i%zo%*8v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['43.203.89.131']
 ALLOWED_HOSTS = []
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    "common.apps.CommonConfig",
-    "adul.apps.BaseConfig",
+    "common",
+    "adul",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,13 +42,13 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -78,21 +78,13 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'python_db',  #mysql
-        'USER': 'root', #root
-        'PASSWORD': '1234', #사용자의 비밀번호
-        'HOST': 'localhost', #공백으로 냅두면 default localhost
-        'PORT': '3306' #공백으로 냅두면 default 3306
+        'NAME': 'python_db',
+        'USER': 'root',
+        'PASSWORD': '1234',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
-
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 # Password validation
@@ -137,16 +129,13 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# 로그인 성공후 이동하는 URL
 LOGIN_REDIRECT_URL = '/'
 
-# 로그아웃시 이동하는 URL
 LOGOUT_REDIRECT_URL = '/'
 
-# 로깅설정
-LOGGING = {
+DEFAULT_LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'filters': {
@@ -162,9 +151,6 @@ LOGGING = {
             '()': 'django.utils.log.ServerFormatter',
             'format': '[{server_time}] {message}',
             'style': '{',
-        },
-        'standard': {
-            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
         },
     },
     'handlers': {
@@ -183,29 +169,16 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-        'file': {
-            'level': 'INFO',
-            'filters': ['require_debug_false'],
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': BASE_DIR / 'logs/mysite.log',
-            'maxBytes': 1024*1024*5,  # 5 MB
-            'backupCount': 5,
-            'formatter': 'standard',
-        },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'mail_admins', 'file'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'INFO',
         },
         'django.server': {
             'handlers': ['django.server'],
             'level': 'INFO',
             'propagate': False,
-        },
-        'adul': {
-            'handlers': ['console', 'file'],
-            'level': 'INFO',
         },
     }
 }
