@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-!)*$!urvee%7ol4iopz3*4+g2c7vll@_b_xi7zan39i%zo%*8v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['43.203.89.131']
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = []
 
 # Application definition
@@ -75,24 +75,28 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'python_db',  #mysql
-#         'USER': 'dbmasteruser', #root
-#         'PASSWORD': 'MoonYang0710*', #사용자의 비밀번호
-#         'HOST': 'ls-ffe9b51d9f7dcfeacb3d8d12c9e1b5806ab9a156.cze44iokmoyf.ap-northeast-2.rds.amazonaws.com', #공백으로 냅두면 default localhost
-#         'PORT': '3306' #공백으로 냅두면 default 3306
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'python_db',
+        'USER': 'dbmasteruser',
+        'PASSWORD': 'MoonYang0710*',
+        'HOST': 'ls-ffe9b51d9f7dcfeacb3d8d12c9e1b5806ab9a156.cze44iokmoyf.ap-northeast-2.rds.amazonaws.com',  # 또는 데이터베이스 호스트 주소
+        'PORT': '3306',       # 또는 데이터베이스 포트 번호
+        'OPTIONS': {
+            'sql_mode': 'STRICT_TRANS_TABLES',
+        },
+    },
 }
+
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
