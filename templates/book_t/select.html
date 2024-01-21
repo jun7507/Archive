@@ -34,10 +34,10 @@
             <input type="submit" value="검색" class="btn btn-light mb-3">
         </form>
 
-        <ul class='pagination'>
+        <ul class='pagination justify-content-center'>
             {% for i in page_range %}
-            <li>
-                <a href='?page={{i}}&search={{search}}'>
+            <li class="page-item">
+                <a class="page-link" href='?page={{i}}&search={{search}}'>
                     {{ i }}
                 </a>
             </li>

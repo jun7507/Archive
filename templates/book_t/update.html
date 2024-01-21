@@ -30,10 +30,10 @@
     </table>
     
     <div class="mb-3" style='text-align:center;'>
-        <ul class='pagination'>
+        <ul class="pagination justify-content-center">
             {% for i in page_range %}
             <li>
-                <a href='?page={{ i }}'>
+                <a class="page-link" href='?page={{ i }}'>
                     {{ i }}
                 </a>
             </li>
@@ -44,10 +44,10 @@
             <label for="bcode" class="form-label">수정할 책 코드를 선택하세요 : </label>
             <input type="text" name="bcode" id="'bcode" ><br>
             <label for="title" class="form-label">책이름 : </label><input type="text" name="title"  id="title" required>
-    <label for="author" class="form-label">저자 : </label><input type="text" name="author"  id="author">
-    <label for="publisher" class="form-label">출판사 : </label><input type="text" name="publisher"  id="publisher">
-    <label for="year_of_publication" class="form-label">출판일 : </label><input type="text" name="year_of_publication"  id="year_of_publication">
-    <label for="price" class="form-label">가격 : </label><input type="text" name="price"  id="price" pattern="[0-9]+">
+            <label for="author" class="form-label">저자 : </label><input type="text" name="author"  id="author">
+            <label for="publisher" class="form-label">출판사 : </label><input type="text" name="publisher"  id="publisher">
+            <label for="year_of_publication" class="form-label">출판일 : </label><input type="text" name="year_of_publication"  id="year_of_publication">
+            <label for="price" class="form-label">가격 : </label><input type="text" name="price"  id="price" pattern="[0-9]+">
             <input type="submit" value="수정" class="btn btn-warning mb-3">
         </form>
 
