@@ -1,10 +1,10 @@
 from .base import *
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['43.200.2.89']
+ALLOWED_HOSTS = ['43.200.2.89', 'archiveapp.net']
 STATIC_ROOT = BASE_DIR / 'static/'
 STATICFILES_DIRS = []
-DEBUG = True
+DEBUG = False
 
 DATABASES = {
     'default': {
