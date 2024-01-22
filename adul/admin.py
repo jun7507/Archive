@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Question, BookList, BookStore, BomAssemlist, BomList
+from .models import Question
 
 # Register your models here.
 class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['subject']
 
 
-admin.site.register(Question, QuestionAdmin, BookList, BookStore, BomAssemlist, BomList)
+admin.site.register(Question, QuestionAdmin)
