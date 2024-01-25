@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 /// import * as Autodesk from "@types/forge-viewer";
 
 async function getAccessToken(callback) {
