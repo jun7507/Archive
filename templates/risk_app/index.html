@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %} 
+{% load plotly_dash %}
+<div>
+  {% plotly_app name="SimpleExample" %}
+</div>
+<div> 
+  {% plotly_app name="SquareRootBarPlot" %}
+</div>
+{% endblock %}

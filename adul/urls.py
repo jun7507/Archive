@@ -7,6 +7,7 @@ app_name = 'adul'
 urlpatterns = [
     # base
     path('', base_views.index, name='index'),
+    path('', base_views.home, name='home'),
     path('<int:question_id>/', base_views.detail, name='detail'),
     
     # question

@@ -15,6 +15,7 @@ DATABASES = {
         'HOST': 'ls-ffe9b51d9f7dcfeacb3d8d12c9e1b5806ab9a156.cze44iokmoyf.ap-northeast-2.rds.amazonaws.com',  # 또는 데이터베이스 호스트 주소
         'PORT': '3306',       # 또는 데이터베이스 포트 번호
         'OPTIONS': {
+            'charset': 'utf8mb4',
             'sql_mode': 'STRICT_TRANS_TABLES',
         },
     },

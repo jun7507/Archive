@@ -1,0 +1,116 @@
+<BODY style="font-size: 10pt; font-family: Arial, sans-serif;">
+<table
+style="width: 500px; font-size: 11pt; font-family: Arial, sans-serif; background: transparent !important;"
+cellpadding="0" cellspacing="0" border="0" class="ng-scope">
+<tbody>
+<tr>
+<td ng-if="showField('logo')" width="200"
+style="font-size: 10pt; font-family: Tahoma, sans-serif; width: 200px; padding-right: 20px; vertical-align: top;"
+valign="top" class="ng-scope">
+<a ng-if="showField('logoURL')" href="https://archiveapp.net" target="_blank"
+class="ng-scope"><img border="0" alt="Logo" width="200"
+style="width:200px; height:auto; border:0;"
+ng-src="https://phinf.pstatic.net/contact/20240130_31/1706547643044zYuEy_JPEG/image.jpg?type=s160"
+src="https://phinf.pstatic.net/contact/20240130_31/1706547643044zYuEy_JPEG/image.jpg?type=s160"></a>
+</td>
+<td valign="top" style="vertical-align: top; width:300px;" width="300">
+<table cellpadding="0" cellspacing="0" width="300"
+style="width:300px; background: transparent !important;" border="0">
+<tbody>
+<tr ng-if="isAnyFieldEntered('firstName, lastName')" class="ng-scope">
+<td style="font-size: 10pt; font-family: Tahoma, sans-serif; width: 300px; height:40px; vertical-align: top;"
+valign="top">
+<strong style="font-family: Arial Black;font-size: 22pt;color:#000000;"
+class="ng-binding">Yang Jaejun</strong>
+</td>
+</tr>
+<tr ng-if="showField('title')" class="ng-scope">
+<td style="font-size: 10pt; font-family: Tahoma, sans-serif; width: 300px; height:30px; vertical-align: top;"
+valign="top">
+<span
+style="text-transform:uppercase; font-family: Tahoma, sans-serif; font-size:10pt; color:#000000;"
+class="ng-binding">Architecture &amp; Data Scientist</span>
+</td>
+</tr>
+<tr>
+<td style="font-size: 9pt; font-family: Tahoma, sans-serif; height:105px; vertical-align: top;"
+valign="top">
+<table cellpadding="0" cellspacing="0" width="300"
+style="width:300px; background: transparent !important;">
+<tbody>
+<tr ng-if="showField('phone')" class="ng-scope">
+<td width="80"
+style="line-height:14px; idth:80px; font-size: 9pt;color:#000000; font-family: Tahoma, sans-serif;">
+Phone:</td>
+<td style="line-height:14px; "><strong
+style="font-size: 9pt; font-family: Tahoma, sans-serif; color:#000000;"
+class="ng-binding">010.2800.5805</strong></td>
+</tr>
+<tr ng-if="showField('email')" class="ng-scope">
+<td width="80"
+style="line-height:14px; width:80px; font-size: 9pt;color:#000000; font-family: Tahoma, sans-serif;">
+Email:</td>
+<td style="line-height:14px; "><strong
+style="font-size: 9pt; font-family: Tahoma, sans-serif; color:#000000;"
+class="ng-binding">iam_idea@naver.com</strong></td>
+</tr>
+<tr ng-if="showField('website')" class="ng-scope">
+<td width="80"
+style="line-height:14px; width:80px; font-size: 9pt;color:#000000; font-family: Tahoma, sans-serif;">
+Website:</td>
+<td style="line-height:14px; "><a href="http://archiveapp.net"
+target="_blank" rel="noopener"
+style="text-decoration:none;"><strong
+style="font-size: 9pt; font-family: Tahoma, sans-serif; color:#000000;"
+class="ng-binding"> archiveapp.net</strong></a></td>
+</tr>
+<tr ng-if="isAnyFieldEntered('company, address1, address2')"
+class="ng-scope">
+<td width="80"
+style="line-height:14px; width:80px; font-size: 9pt;color:#000000; font-family: Tahoma, sans-serif; vertical-align: top;"
+valign="top">Address:</td>
+<td style="vertical-align: top; line-height:14px;" valign="top">
+<strong ng-if="showField('address1')"
+style="font-size: 9pt; font-family: Tahoma, sans-serif; color: #000000;"
+class="ng-binding ng-scope">Sejong-si, Republic of
+Korea</strong>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr ng-if="isAnyFieldEntered('facebookURL, twitterURL, youtubeURL, linkedinURL, instagramURL')"
+class="ng-scope">
+<td style="font-size: 10pt; font-family: Tahoma, sans-serif; padding-bottom: 0px; vertical-align: bottom; height:25px;"
+valign="bottom">
+<span ng-if="showField('twitterURL')" class="ng-scope"><a
+href="https://twitter.com/yangjaejun9242" target="_blank"
+rel="noopener"><img border="0" width="19"
+ng-src="https://www.mail-signatures.com/signature-generator/img/templates/pad-box/tt.png"
+alt="twitter icon" style="border:0; height:19px; width:19px"
+src="https://www.mail-signatures.com/signature-generator/img/templates/pad-box/tt.png"></a>&nbsp;</span><span
+ng-if="showField('instagramURL')" class="ng-scope"><a
+href="https://www.instagram.com/s_e_g_m_e_n_t/" target="_blank"
+rel="noopener"><img border="0" width="19"
+ng-src="https://www.mail-signatures.com/signature-generator/img/templates/pad-box/it.png"
+alt="instagram icon" style="border:0; height:19px; width:19px"
+src="https://www.mail-signatures.com/signature-generator/img/templates/pad-box/it.png"></a>&nbsp;</span>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td colspan="2" ng-if="showField('disclaimer')"
+style="padding-top:15px; line-height:14px; font-size: 8pt; color: #9a9a9a; font-family: Tahoma, sans-serif;"
+class="ng-binding ng-scope">The content of this email is confidential and intended for the
+recipient specified in message only. It is strictly forbidden to share any part of this
+message with any third party, without a written consent of the sender. If you received this
+message by mistake, please reply to this message and follow with its deletion, so that we
+can ensure such a mistake does not occur in the future.</td>
+</tr>
+</tbody>
+</table>
+</ng-include></div>

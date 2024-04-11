@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = "django-insecure-!)*$!urvee%7ol4iopz3*4+g2c7vll@_b_xi7zan39i%zo%*8v"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['43.200.2.89']
 # ALLOWED_HOSTS = []
@@ -33,12 +33,14 @@ ALLOWED_HOSTS = ['43.200.2.89']
 INSTALLED_APPS = [
     "common.apps.CommonConfig",
     "adul.apps.BaseConfig",
+    "risk_app.apps.RiskAppConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_plotly_dash.middleware.BaseMiddleware',
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -84,6 +87,7 @@ DATABASES = {
         'HOST': 'ls-ffe9b51d9f7dcfeacb3d8d12c9e1b5806ab9a156.cze44iokmoyf.ap-northeast-2.rds.amazonaws.com',  # 또는 데이터베이스 호스트 주소
         'PORT': '3306',       # 또는 데이터베이스 포트 번호
         'OPTIONS': {
+            'charset': 'utf8mb4',
             'sql_mode': 'STRICT_TRANS_TABLES',
         },
     },
@@ -129,6 +133,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+X_FRAME_OPTIONS = 'SAMEORIGIN' # clickjacking 공격 방지
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

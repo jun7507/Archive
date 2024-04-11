@@ -23,6 +23,8 @@ urlpatterns = [
     path('adul/', include('adul.urls')),
     path('common/', include('common.urls')),
     path('', base_views.adul, name='base'),  # '/' 에 해당되는 path
+    path('risk/', include('risk_app.urls')),
+    path('django_plotly_dash/', include('django_plotly_dash.urls')),
 ]
 
 handler404 = 'common.views.page_not_found'
