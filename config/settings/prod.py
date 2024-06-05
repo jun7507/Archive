@@ -1,22 +1,18 @@
 from .base import *
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['43.200.2.89', 'archiveapp.net']
+ALLOWED_HOSTS = ['*']
 STATIC_ROOT = BASE_DIR / 'static/'
 STATICFILES_DIRS = []
 DEBUG = False
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'python_db',
-        'USER': 'dbmasteruser',
-        'PASSWORD': 'MoonYang0710*',
-        'HOST': 'ls-ffe9b51d9f7dcfeacb3d8d12c9e1b5806ab9a156.cze44iokmoyf.ap-northeast-2.rds.amazonaws.com',  # 또는 데이터베이스 호스트 주소
-        'PORT': '3306',       # 또는 데이터베이스 포트 번호
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-            'sql_mode': 'STRICT_TRANS_TABLES',
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ml', # 데이터베이스 이름
+        'USER': 'yangjaejun', # 데이터베이스 사용자 이름
+        'PASSWORD': 'password',
+        'HOST': '192.168.0.2',  # 또는 데이터베이스 호스트 주소
+        'PORT': '5432',       # PostgreSQL 기본 포트 번호
     },
 }
